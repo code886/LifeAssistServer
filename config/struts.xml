@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 禁止动态访问(user!login.action) -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 开启开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- struts的UI定义 -->
+    <constant name="struts.ui.theme" value="simple" />
+	<!-- action的后缀必须为.action -->
+	<constant name="struts.action.extension" value="action" />
+	
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/WEB-INF/jsp/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">HelloWorld</param>
+                <param name="namespace">/example</param>
+            </result>
+        </action>
+    </package>
+
+	<!-- 包含用户管理的struts配置文件 -->
+    <include file="com/lifeAssist/user/config/user-struts.xml"/>
+
+    <!-- Add packages here -->
+
+</struts>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="LifeAsstServer">
+    <wb-module deploy-name="LifeAssistServer">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="LifeAsstServer"/>
-        <property name="java-output-path" value="/LifeAsstServer/build/classes"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/config"/>
+        <property name="java-output-path" value="/LifeAssistServer/build/classes"/>
+        <property name="context-root" value="LifeAssistServer"/>
     </wb-module>
 </project-modules>
