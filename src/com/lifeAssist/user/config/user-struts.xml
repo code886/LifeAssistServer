@@ -6,11 +6,14 @@
 <struts>
 	<package name="user-action" extends="struts-default" namespace="/user">
 		<action name="user_*" class="com.lifeAssist.user.action.UserAction" method="{1}">
-			<result name="loginSuccess" >/jsp/user/success.jsp</result>
-			<result name="loginFailed">/jsp/user/failed.jsp</result>
-			<result name="regiserSuccess">/jsp/user/success.jsp</result>
-			<result name="registerFailed">/jsp/user/failed.jsp</result>
+			<result name="{1}" >/WEB-INF/jsp/user/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">user_listUI</param>
+				<param name="user.name">${strName}</param>
+				<param name="encode">true</param>
+			</result>
 		</action>
+		
 	</package>
 
 </struts>

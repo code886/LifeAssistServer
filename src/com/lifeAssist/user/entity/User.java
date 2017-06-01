@@ -12,6 +12,7 @@ public class User implements Serializable{
 	private String name;
 	private boolean gender;
 	private String headImg;
+	
 	public String getId() {
 		return id;
 	}

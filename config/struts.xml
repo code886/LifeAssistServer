@@ -13,7 +13,7 @@
 	<!-- action的后缀必须为.action -->
 	<constant name="struts.action.extension" value="action" />
 	
-    <package name="default" namespace="/" extends="struts-default">
+    <package name="base-default" namespace="/" extends="struts-default">
 
         <default-action-ref name="index" />
 
@@ -24,17 +24,13 @@
         <global-exception-mappings>
             <exception-mapping exception="java.lang.Exception" result="error"/>
         </global-exception-mappings>
-
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
-            </result>
-        </action>
+        
     </package>
 
 	<!-- 包含用户管理的struts配置文件 -->
     <include file="com/lifeAssist/user/config/user-struts.xml"/>
+    <include file="com/lifeAssist/home/config/home-struts.xml"/>
+    <include file="com/lifeAssist/login/config/login-struts.xml"/>
 
     <!-- Add packages here -->
 
